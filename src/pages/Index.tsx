@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const IMG_MAIN   = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/cfca25d5-1a0e-4d9b-a6b9-02af50ecb655.jpg';
-const IMG_DETAIL = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/2eb712f8-af34-4d61-9fd4-17c7ba1358d8.jpg';
-const IMG_LIGHT  = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/60548d2e-172d-401d-9981-e44d36c82f5f.jpg';
+const IMG_MAIN   = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/dc8b2e08-d565-424b-8152-6e38b3a21fec.jpg';
+const IMG_DETAIL = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/854ef96e-7101-4ace-beb1-6bd6abc735fb.jpg';
+const IMG_LIGHT  = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/b3905b38-e787-4767-85ad-b3bf574a12a9.jpg';
 
-const NEON = '#00e5ff';   // неоновый синий
-const NEON2 = '#39ff14';  // неоновый зелёный (антискольжение)
+const NEON = '#00e5ff';   // синий акцент
+const NEON2 = '#7a8494';  // нейтральный серый (вместо зелёного)
 
 const specs = [
   { label: 'Тип марша',      value: 'Прямой',    icon: 'MoveVertical' },
@@ -16,9 +16,9 @@ const specs = [
 ];
 
 const angles = [
-  { title: 'Общий вид',         desc: 'Тёмный бетон, орбитальная LED-подсветка краёв', img: IMG_MAIN },
-  { title: 'Аварийное освещение', desc: 'Синий неон + аварийный контур на каждой ступени', img: IMG_LIGHT },
-  { title: 'Детали безопасности', desc: 'Антискользящие вставки и усиленные уголки',      img: IMG_DETAIL },
+  { title: 'Общий вид',           desc: 'Тёмный бетон, равномерное потолочное освещение',  img: IMG_MAIN },
+  { title: 'Рабочее освещение',   desc: 'Потолочные светильники, нейтральный белый свет',   img: IMG_LIGHT },
+  { title: 'Детали безопасности', desc: 'Антискользящие вставки и усиленные уголки',        img: IMG_DETAIL },
 ];
 
 const materials = [
@@ -31,9 +31,9 @@ const materials = [
   },
   {
     name: 'Антискользящая вставка',
-    role: 'Резиновый профиль + неон',
-    props: ['Класс R13 (макс. антискольжение)', 'Ширина вставки 50 мм', 'Встроенный LED 24V', 'Цвет свечения #39FF14'],
-    swatch: `linear-gradient(135deg, #1a2b1a 0%, #112211 100%)`,
+    role: 'Резиновый профиль flush',
+    props: ['Класс R13 (макс. антискольжение)', 'Ширина вставки 50 мм', 'Заподлицо с проступью', 'Тёмно-серый цвет'],
+    swatch: 'linear-gradient(135deg, #2a2d32 0%, #1c1e22 100%)',
     glowColor: NEON2,
   },
   {
@@ -46,9 +46,9 @@ const materials = [
 ];
 
 const lighting = [
-  { title: 'Орбитальная подсветка ступеней', desc: 'LED-профиль 24V вдоль всего торца каждой ступени. Равномерная засветка без слепящих точек.', icon: 'Circle' },
+  { title: 'Потолочные светильники', desc: 'Встроенные споты на верхнем перекрытии, равномерная засветка марша без теней и слепящих точек.', icon: 'Circle' },
   { title: 'Аварийное освещение (аккумулятор)', desc: 'При отключении питания автоматически включается аварийный контур на 3 часа. Соответствие ГОСТ Р 55842.', icon: 'Zap' },
-  { title: 'Датчик движения', desc: 'Умное управление: полная яркость при движении, режим дежурства 10% в тишине — экономия до 70% энергии.', icon: 'Radar' },
+  { title: 'Датчик движения', desc: 'Полная яркость при движении, режим дежурства 10% в тишине — экономия до 70% энергии.', icon: 'Radar' },
 ];
 
 const details = [
@@ -228,7 +228,7 @@ const Index = () => {
             <img src={IMG_LIGHT} alt="Освещение" className="w-full h-full object-cover opacity-80" />
             <div className="absolute bottom-3 left-3 text-[10px] uppercase tracking-widest" style={{ color: NEON }}>
               <span className="pulse-neon inline-block w-1.5 h-1.5 rounded-full mr-1 bg-current" />
-              Emergency mode: ACTIVE
+              Lighting: UNIFORM
             </div>
           </div>
           <div className="space-y-4">
