@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const IMG_MAIN   = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/1ec421bc-6c1d-4491-88f3-e8b6f59ae027.jpg';
-const IMG_DETAIL = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/90b4d010-dc48-4a05-bf71-ceab0d46ba99.jpg';
+const IMG_MAIN   = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/edbc7d57-e383-4463-8bb8-ef1d5676d3a0.jpg';
+const IMG_DETAIL = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/f39e69fa-15f2-4bd1-9643-944e9683fad9.jpg';
 const IMG_LIGHT  = 'https://cdn.poehali.dev/projects/23d5f082-a324-40fb-a4b3-9560c6355c91/files/42b91800-9d1e-44b1-9f12-9d7826a7c137.jpg';
 
 const MARK  = '#f5c400';   // жёлтая маркировка
@@ -15,21 +15,21 @@ const specs = [
   { label: 'Ширина марша',    value: '1400 мм',  icon: 'MoveHorizontal' },
   { label: 'Пропускная способность', value: '120 чел/мин', icon: 'Users' },
   { label: 'Ступеней',        value: '15 шт',    icon: 'Layers' },
-  { label: 'Покрытие',        value: 'Алюминий', icon: 'Cpu' },
+  { label: 'Покрытие',        value: 'Керамика', icon: 'Cpu' },
 ];
 
 const angles = [
   { title: 'Общий вид',         desc: 'Широкий марш, стеклянные перила, маркировка зон',       img: IMG_MAIN },
   { title: 'Поток сотрудников', desc: 'Направленный свет, датчики движения, чистые зоны',       img: IMG_LIGHT },
-  { title: 'Деталь ступени',    desc: 'Алюминиевая проступь, жёлтая полоса перехода, LED-нос',  img: IMG_DETAIL },
+  { title: 'Деталь ступени',    desc: 'Бетон + керамическая плитка, жёлтая полоса перехода',    img: IMG_DETAIL },
 ];
 
 const materials = [
   {
-    name: 'Алюминиевый профиль',
+    name: 'Бетон + керамика',
     role: 'Проступь',
-    props: ['Анодированный алюминий', 'Рифлёная поверхность anti-slip', 'Встроенный LED-нос 24V', 'Нагрузка 800 кг/м²'],
-    swatch: 'linear-gradient(135deg, #d8dadc 0%, #b8bcbf 55%, #9a9ea2 100%)',
+    props: ['Бетонное основание B30', 'Керамическая плитка PEI V', 'Антискользящая канавка R11', 'Нагрузка 800 кг/м²'],
+    swatch: 'linear-gradient(135deg, #d4d0cc 0%, #b8b4af 55%, #9c9892 100%)',
     accent: MARK,
   },
   {
@@ -80,7 +80,7 @@ const cons = [
 ];
 
 const details = [
-  { title: 'Ступень',      value: 'Алюминий 40 мм',    desc: 'Анодированный профиль, встроенный LED-нос, рифлёная поверхность R12.',    icon: 'Layers' },
+  { title: 'Ступень',      value: 'Бетон + керамика',   desc: 'Основание B30, облицовка керамической плиткой PEI V, антискользящая канавка R11.', icon: 'Layers' },
   { title: 'Ограждение',   value: 'Стекло 12 мм',      desc: 'Закалённое безрамное стекло с точечными держателями, высота 1050 мм.',     icon: 'Square' },
   { title: 'Маркировка',   value: 'Жёлтая полоса',     desc: '50 мм световозвращающая полоса по переднему краю, ГОСТ Р 12.4.026.',      icon: 'AlertTriangle' },
   { title: 'Датчики',      value: 'ИК + движение',     desc: 'Автовключение при обнаружении людей, дежурный режим 15% в пустом марше.', icon: 'Radar' },
